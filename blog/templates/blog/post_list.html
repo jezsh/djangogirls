@@ -5,14 +5,15 @@
 </head>
 <body>
 	<div>
-		<h1></h1>
+		<h1>Blog</h1>
 	</div>
-	<div>
-		<p>Published:</p>
-		<h2>Title</h2>
-		<p>Text</p>
-	</div>
-
+	{% for post in posts %}
+		<div>
+			<p>Title: {{ post.title }}</p>
+			<p>Published on: {{ post.published_date }}</p>
+			<p>{{ post.text | linebreaks }}</p>
+		</div>
+	{% endfor %}
 	<div>
 		<p>published:</p>
 		<h2>title</h2>
